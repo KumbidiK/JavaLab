@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LargestSmallest {
+public class LargSmallArr {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
 
