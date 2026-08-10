@@ -10,7 +10,7 @@ class Employee {
     }
 }
 
-class Main {
+class EmployeeDetails {
     public static void main(String[] args) {
         Employee e1 = new Employee();
         Employee e2 = new Employee();
