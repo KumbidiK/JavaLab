@@ -9,10 +9,10 @@ class Book {
         price = 0.0;
     }
 
-    Book(String title, String author, double price) {
-        this.title = title;
-        this.author = author;
-        this.price = price;
+    Book(String bookTitle, String bookAuthor, double bookPrice) {
+        title = bookTitle;
+        author = bookAuthor;
+        price = bookPrice;
     }
 
     void display() {
