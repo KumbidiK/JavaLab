@@ -1,3 +1,5 @@
+//write a program to find the sum of the principal and secondary diagonal elements of a square matrix
+
 import java.util.Scanner;
 
 public class DiagonalSum {
