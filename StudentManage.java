@@ -58,12 +58,5 @@ class StudentManage {
 
         s3.display();
         s3.calculateGrade(92);
-
-        s1 = null;
-        s2 = null;
-
-        System.gc();
-
-        System.out.println("Garbage collection requested");
     }
 }
