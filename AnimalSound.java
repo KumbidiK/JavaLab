@@ -18,7 +18,7 @@ class Cat extends Animal {
     }
 }
 
-public class Main {
+public class AnimalSound {
     public static void main(String[] args) {
         Animal dog = new Dog();
         Animal cat = new Cat();
