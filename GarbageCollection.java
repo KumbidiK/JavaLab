@@ -1,16 +1,13 @@
 class Demo {
-    void display() {
-        System.out.println("Demo object is created");
-    }
 
-    @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Object is garbage collected");
+    void display() {
+        System.out.println("Hello from Demo object");
     }
 }
 
-class GarbageCollection {
+public class GarbageCollection {
     public static void main(String[] args) {
+
         Demo d1 = new Demo();
         Demo d2 = new Demo();
         Demo d3 = new Demo();
@@ -24,6 +21,6 @@ class GarbageCollection {
 
         System.gc();
 
-        System.out.println("Garbage collection requested");
+        System.out.println("Garbage collection requested.");
     }
 }

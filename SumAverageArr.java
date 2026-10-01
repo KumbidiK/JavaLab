@@ -14,4 +14,3 @@ public class SumAverageArr{
                 System.out.println("Sum = "+sum+" Average = "+avg);
         }
 }
-~   
