@@ -20,7 +20,7 @@ class Box {
     }
 
     void volume() {
-        System.out.println("Volume = 0");
+        System.out.println("Volume = " + (length * breadth * height));
     }
 
     void volume(double side) {
