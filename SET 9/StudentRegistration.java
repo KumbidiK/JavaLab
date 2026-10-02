@@ -1,91 +1,122 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-class StudentRegistration extends Frame implements ActionListener {
-    TextField name, rollNo;
-    Choice course;
-    Checkbox male, female;
-    Button submit, clear;
-    TextArea result;
+class StudentRegistration extends JFrame implements ActionListener {
+
+    JTextField nameField;
+    JTextField regField;
+
+    JRadioButton male;
+    JRadioButton female;
+
+    JCheckBox sports;
+    JCheckBox music;
+
+    JComboBox<String> course;
+
+    JButton submit;
+    JButton clear;
+
     StudentRegistration() {
 
-        setTitle("Student Registration Form");
-        setSize(500, 500);
-        setLayout(new BorderLayout());
+        setTitle("Student Registration");
+        setSize(400, 400);
+        setLayout(new FlowLayout());
 
-        Panel form = new Panel();
-        form.setLayout(new GridLayout(5, 2, 10, 10));
+        add(new JLabel("Name:"));
+        nameField = new JTextField(20);
+        add(nameField);
 
-        form.add(new Label("Name:"));
-        name = new TextField();
-        form.add(name);
-        form.add(new Label("Roll Number:"));
-        rollNo = new TextField();
-        form.add(rollNo);
+        add(new JLabel("Register No:"));
+        regField = new JTextField(20);
+        add(regField);
 
-        form.add(new Label("Course:"));
-        course = new Choice();
-        course.add("BCA");
-        course.add("BSc Computer Science");
-        course.add("BTech");
-        form.add(course);
+        add(new JLabel("Gender:"));
 
-        form.add(new Label("Gender:"));
-        Panel gender = new Panel();
-        gender.setLayout(new FlowLayout());
+        male = new JRadioButton("Male");
+        female = new JRadioButton("Female");
 
-        CheckboxGroup group = new CheckboxGroup();
-        male = new Checkbox("Male", group, false);
-        female = new Checkbox("Female", group, false);
+        ButtonGroup gender = new ButtonGroup();
         gender.add(male);
         gender.add(female);
-        form.add(gender);
 
-        submit = new Button("Submit");
-        clear = new Button("Clear");
+        add(male);
+        add(female);
 
-        form.add(submit);
-        form.add(clear);
+        add(new JLabel("Hobbies:"));
 
-        add(form, BorderLayout.NORTH);
-        result = new TextArea();
-        add(result, BorderLayout.CENTER);
+        sports = new JCheckBox("Sports");
+        music = new JCheckBox("Music");
+
+        add(sports);
+        add(music);
+
+        add(new JLabel("Course:"));
+
+        String courses[] = {
+            "Computer Science",
+            "Electronics",
+            "Mechanical"
+        };
+
+        course = new JComboBox<>(courses);
+        add(course);
+
+        submit = new JButton("Submit");
+        clear = new JButton("Clear");
+
+        add(submit);
+        add(clear);
 
         submit.addActionListener(this);
         clear.addActionListener(this);
 
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                dispose();
-      }
-        });
-
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
+
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == submit) {
 
             String gender = "";
-            if (male.getState())
+
+            if (male.isSelected())
                 gender = "Male";
-            else if (female.getState())
+            else if (female.isSelected())
                 gender = "Female";
-            result.setText(
-                    "Student Details\n\n" +
-                    "Name: " + name.getText() + "\n" +
-                    "Roll Number: " + rollNo.getText() + "\n" +
-                    "Course: " + course.getSelectedItem() + "\n" +
-                    "Gender: " + gender
+
+            String hobbies = "";
+
+            if (sports.isSelected())
+                hobbies = hobbies + "Sports ";
+
+            if (music.isSelected())
+                hobbies = hobbies + "Music";
+
+            JOptionPane.showMessageDialog(
+                this,
+                "Name: " + nameField.getText()
+                + "\nRegister No: " + regField.getText()
+                + "\nGender: " + gender
+                + "\nHobbies: " + hobbies
+                + "\nCourse: " + course.getSelectedItem()
             );
         }
+
         if (e.getSource() == clear) {
-            name.setText("");
-            rollNo.setText("");
-            course.select(0);
-            male.setState(false);
-            female.setState(false);
-            result.setText("");
+
+            nameField.setText("");
+            regField.setText("");
+
+            male.setSelected(false);
+            female.setSelected(false);
+
+            sports.setSelected(false);
+            music.setSelected(false);
+
+            course.setSelectedIndex(0);
         }
     }
 
