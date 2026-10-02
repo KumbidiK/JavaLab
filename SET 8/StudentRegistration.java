@@ -12,53 +12,64 @@ class StudentRegistration extends Frame implements ActionListener {
 
     StudentRegistration() {
 
-        setLayout(new FlowLayout());
+        setTitle("Student Registration");
+        setSize(400, 400);
+        setLayout(new BorderLayout());
 
-        add(new Label("Name:"));
+        Panel form = new Panel();
+        form.setLayout(new FlowLayout());
+
+        form.add(new Label("Name:"));
         name = new TextField(20);
-        add(name);
+        form.add(name);
 
-        add(new Label("Register No:"));
+        form.add(new Label("Register No:"));
         regno = new TextField(20);
-        add(regno);
+        form.add(regno);
 
-        add(new Label("Course:"));
+        form.add(new Label("Course:"));
         course = new Choice();
         course.add("BCS");
         course.add("BCA");
         course.add("BBA");
-        add(course);
+        form.add(course);
 
-        add(new Label("Gender:"));
+        form.add(new Label("Gender:"));
 
         male = new Checkbox("Male");
         female = new Checkbox("Female");
 
-        add(male);
-        add(female);
+        form.add(male);
+        form.add(female);
 
-        add(new Label("Hobbies:"));
+        form.add(new Label("Hobbies:"));
 
         java = new Checkbox("Java");
         python = new Checkbox("Python");
 
-        add(java);
-        add(python);
+        form.add(java);
+        form.add(python);
 
         submit = new Button("Submit");
         clear = new Button("Clear");
 
-        add(submit);
-        add(clear);
+        form.add(submit);
+        form.add(clear);
 
         result = new Label();
-        add(result);
+
+        add(form, BorderLayout.CENTER);
+        add(result, BorderLayout.SOUTH);
 
         submit.addActionListener(this);
         clear.addActionListener(this);
 
-        setSize(400, 400);
-        setTitle("Student Registration");
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
+
         setVisible(true);
     }
 
@@ -73,6 +84,7 @@ class StudentRegistration extends Frame implements ActionListener {
         }
 
         if (e.getSource() == clear) {
+
             name.setText("");
             regno.setText("");
             result.setText("");
