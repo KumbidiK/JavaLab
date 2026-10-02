@@ -282,24 +282,36 @@ JavaLab/
 │
 ├── SET 5/
 │   ├── ThreadLifeCycle.java
-│   ├── ThreadDemo.java
+│   ├── ThreadClassDemo.java
 │   ├── RunnableDemo.java
-│   ├── Bank.java
-│   └── Customer.java
+│   ├── BankDemo.java
+│   └── TicketDemo.java
 │
 ├── SET 6/
-│   ├── FileInputStream
-│   ├── FileOutputStream
-│   ├── DataInputStream
-│   ├── DataOutputStream
-│   └── Buffered Streams
+│   ├── FileInput.java
+│   ├── FileOutput.java
+│   ├── StudentData.java
+│   ├── BufferedStream.java
+│   └── EmployeeData.java
 │
 ├── SET 7/
-│   ├── Applet Life Cycle
-│   ├── User Information Applet
-│   ├── Mouse Event Applet
-│   ├── Animation Applet
-│   └── HTML Parameter Applet
+│   ├── Applet Q 1/
+│   │   ├── LifeCycle.java
+│   │   └── LifeCycle.html
+│   ├── Applet Q 2/
+│   │   ├── StudentApplet.java
+│   │   └── StudentApplet.html
+│   ├── Applet Q 3/
+│   │   ├── MouseApplet.java
+│   │   └── MouseApplet.html
+│   ├── Applet Q 4/
+│   │   ├── AnimationApplet.java
+│   │   └── AnimationApplet.html
+│   └── Applet Q 5/
+│       ├── ParameterApplet.java
+│       ├── ParameterApplet1.html
+│       ├── ParameterApplet2.html
+│       └── ParameterApplet3.html
 │
 ├── SET 8/
 │   ├── Student Registration
@@ -309,8 +321,8 @@ JavaLab/
 │   └── Student Performance System
 │
 └── SET 9/
-    ├── Swing Registration Form
-    ├── Swing Calculator
-    ├── Student Mark List
-    ├── Login System
-    └── Library Management GUI
+    ├── StudentRegistration.java
+    ├── SwingCalculator.java
+    ├── StudentMarkList.java
+    ├── SwingLoginForm.java
+    └── LibraryBookManagement.java
