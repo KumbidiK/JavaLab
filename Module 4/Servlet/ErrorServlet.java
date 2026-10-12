@@ -1,6 +1,3 @@
-// ErrorServlet.java - Servlet Error Handling (Roll 25, Q1)
-// Generates an error and uses custom error page
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -14,11 +11,11 @@ public class ErrorServlet extends HttpServlet {
         String action = request.getParameter("action");
 
         if ("arithmetic".equals(action)) {
-            // Intentional ArithmeticException
-            int result = 10 / 0;
+
+            int result = 10 / Integer.parseInt("0");
         }
         else if ("null".equals(action)) {
-            // Intentional NullPointerException
+
             String str = null;
             str.length();
         }
@@ -48,44 +45,3 @@ public class ErrorServlet extends HttpServlet {
         }
     }
 }
-
-/*
-web.xml configuration:
-
-<servlet>
-    <servlet-name>ErrorServlet</servlet-name>
-    <servlet-class>ErrorServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>ErrorServlet</servlet-name>
-    <url-pattern>/error</url-pattern>
-</servlet-mapping>
-
-<!-- Custom Error Pages -->
-<error-page>
-    <exception-type>java.lang.ArithmeticException</exception-type>
-    <location>/errorPage.jsp</location>
-</error-page>
-<error-page>
-    <exception-type>java.lang.NullPointerException</exception-type>
-    <location>/errorPage.jsp</location>
-</error-page>
-<error-page>
-    <error-code>404</error-code>
-    <location>/errorPage.jsp</location>
-</error-page>
-
---- errorPage.jsp ---
-
-<%@ page isErrorPage="true" %>
-<html>
-<head><title>Error Page</title></head>
-<body>
-    <h2>Custom Error Page</h2>
-    <p>An error occurred!</p>
-    <p>Error: <%= exception != null ? exception.getMessage() : "Unknown" %></p>
-    <p>Status Code: <%= response.getStatus() %></p>
-    <a href="error">Go Back</a>
-</body>
-</html>
-*/
