@@ -1,5 +1,3 @@
-<%-- implicit.jsp - JSP Implicit Objects (Roll 27, Q3) --%>
-<%-- Demonstrates request, response, session, etc. --%>
 
 <%@ page contentType="text/html" %>
 <%@ page errorPage="error.jsp" %>
