@@ -1,6 +1,3 @@
-// StudentResponse.java - Servlet Request & Response (Roll 24, Q3)
-// Reads HTML form parameters and generates HTML response
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
