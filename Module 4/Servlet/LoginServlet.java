@@ -1,6 +1,3 @@
-// LoginServlet.java - Servlet Security (Roll 25, Q2)
-// Simple login with protected resources
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
