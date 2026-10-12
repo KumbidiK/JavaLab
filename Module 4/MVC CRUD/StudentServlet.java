@@ -1,62 +1,18 @@
-// Controller - StudentServlet.java (MVC CRUD)
-
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.List;
 import javax.servlet.*;
 import javax.servlet.http.*;
-
 public class StudentServlet extends HttpServlet {
-
-    private StudentDAO dao = new StudentDAO();
-
-    protected void doGet(HttpServletRequest request,
-                         HttpServletResponse response)
-            throws ServletException, IOException {
-
-        String action = request.getParameter("action");
-
-        if (action == null) action = "list";
-
-        switch (action) {
-            case "delete":
-                int id = Integer.parseInt(
-                    request.getParameter("id")
-                );
-                dao.deleteStudent(id);
-                response.sendRedirect("StudentServlet");
-                break;
-
-            default:
-                List<Student> list = dao.getAllStudents();
-                request.setAttribute("students", list);
-                RequestDispatcher rd =
-                    request.getRequestDispatcher("index.jsp");
-                rd.forward(request, response);
-        }
-    }
-
-    protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response)
-            throws ServletException, IOException {
-
-        String action = request.getParameter("action");
-
-        int id = Integer.parseInt(
-            request.getParameter("id")
-        );
-        String name = request.getParameter("name");
-        double marks = Double.parseDouble(
-            request.getParameter("marks")
-        );
-
-        Student s = new Student(id, name, marks);
-
-        if ("update".equals(action)) {
-            dao.updateStudent(s);
-        } else {
-            dao.addStudent(s);
-        }
-
-        response.sendRedirect("StudentServlet");
-    }
+ private StudentDAO dao=new StudentDAO();
+ protected void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
+  String action=request.getParameter("action");
+  if("delete".equals(action)){try{dao.deleteStudent(Integer.parseInt(request.getParameter("id")));}catch(NumberFormatException e){response.sendError(400,"Invalid ID");return;}response.sendRedirect("StudentServlet");return;}
+  List<Student> students=dao.getAllStudents(); request.setAttribute("students",students); request.getRequestDispatcher("/MVC CRUD/index.jsp").forward(request,response);
+ }
+ protected void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
+  try{int id=Integer.parseInt(request.getParameter("id"));String name=request.getParameter("name");double marks=Double.parseDouble(request.getParameter("marks"));
+   if(name==null||name.trim().isEmpty()||marks<0||marks>100){response.sendError(400,"Invalid details");return;}
+   Student s=new Student(id,name.trim(),marks); if("update".equals(request.getParameter("action")))dao.updateStudent(s);else dao.addStudent(s); response.sendRedirect("StudentServlet");
+  }catch(NumberFormatException e){response.sendError(400,"Invalid ID or marks");}
+ }
 }
