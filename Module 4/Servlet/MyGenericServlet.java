@@ -1,6 +1,3 @@
-// MyGenericServlet.java - GenericServlet Demo (Roll 24, Q1)
-// Demonstrates GenericServlet (protocol-independent)
-
 import java.io.*;
 import javax.servlet.*;
 
