@@ -1,6 +1,3 @@
-// CartServlet.java - Session Tracking (Roll 26, Q2)
-// Shopping cart using HttpSession
-
 import java.io.*;
 import java.util.*;
 import javax.servlet.*;
