@@ -1,6 +1,3 @@
-<%-- directive.jsp - JSP Directives Demo (Roll 27, Q1) --%>
-<%-- Demonstrates page directive attributes --%>
-
 <%-- import attribute --%>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
