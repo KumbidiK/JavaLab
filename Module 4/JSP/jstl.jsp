@@ -1,5 +1,4 @@
-<%-- jstl.jsp - JSTL Demo (Roll 28, Q1) --%>
-<%-- Demonstrates c:if, c:forEach, c:choose, c:when, c:otherwise --%>
+
 
 <%@ page contentType="text/html" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
