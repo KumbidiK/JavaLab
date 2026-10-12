@@ -1,5 +1,3 @@
-// Controller - StudentController.java
-
 class StudentController {
 
     private Student model;
