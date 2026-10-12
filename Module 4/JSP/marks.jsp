@@ -1,5 +1,3 @@
-<%-- marks.jsp - JSP Expressions and Declarations (Roll 26, Q4) --%>
-<%-- Calculates and displays student marks, total, average --%>
 
 <%@ page contentType="text/html" %>
 
