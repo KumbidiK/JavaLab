@@ -1,5 +1,3 @@
-// MVCDemo.java - Main class to demonstrate MVC
-
 class MVCDemo {
 
     public static void main(String[] args) {
