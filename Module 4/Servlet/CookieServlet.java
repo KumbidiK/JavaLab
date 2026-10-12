@@ -1,6 +1,3 @@
-// CookieServlet.java - Cookies Demo (Roll 26, Q1)
-// Stores and retrieves user preferences using cookies
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
