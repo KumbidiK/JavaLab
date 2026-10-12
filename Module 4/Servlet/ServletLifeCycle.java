@@ -1,6 +1,3 @@
-// ServletLifeCycle.java - Servlet Life Cycle (Roll 23, Q4)
-// Demonstrates init(), service() and destroy()
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
