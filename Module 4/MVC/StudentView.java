@@ -1,5 +1,3 @@
-// View - StudentView.java
-
 class StudentView {
 
     public void displayStudent(Student student) {
