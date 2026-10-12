@@ -1,5 +1,3 @@
-<%-- error.jsp - Error Page (Roll 27, Q1) --%>
-<%-- Custom error page for handling exceptions --%>
 
 <%@ page isErrorPage="true" %>
 <%@ page contentType="text/html" %>
