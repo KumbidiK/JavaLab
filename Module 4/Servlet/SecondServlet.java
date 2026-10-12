@@ -1,6 +1,3 @@
-// SecondServlet.java - Servlet Chaining (Roll 25, Q3)
-// Second servlet in the chain
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
