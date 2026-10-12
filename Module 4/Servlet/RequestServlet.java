@@ -1,6 +1,3 @@
-// RequestServlet.java - GET, POST, HEAD Requests (Roll 24, Q2)
-// Handles GET, POST and HEAD requests
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
