@@ -1,6 +1,3 @@
-// HomeServlet.java - Protected Resource (Roll 25, Q2)
-// Only authenticated users can access this page
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
