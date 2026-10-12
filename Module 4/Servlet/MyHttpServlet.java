@@ -1,6 +1,3 @@
-// MyHttpServlet.java - HttpServlet Demo (Roll 24, Q1)
-// Demonstrates HttpServlet (HTTP-specific)
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
