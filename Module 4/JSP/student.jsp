@@ -1,5 +1,4 @@
-<%-- student.jsp - Basic JSP & JSP Life Cycle (Roll 26, Q3) --%>
-<%-- Demonstrates JSP translation, compilation, execution --%>
+
 
 <%@ page contentType="text/html" %>
 
